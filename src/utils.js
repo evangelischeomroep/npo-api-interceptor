@@ -33,7 +33,7 @@ export const getPathnameFromUrl = url => {
     parser.href = url
 
     // IE forgets to add an initial `/`, so we need to do that ourself.
-    return (parser.pathname.indexOf('/') === 0) ? parser.pathname : '/' + parser.pathname;
+    return (parser.pathname.indexOf('/') === 0) ? parser.pathname : '/' + parser.pathname
   } else {
     const parser = require('url')
 
