@@ -9,6 +9,8 @@
     "./lib/npoapiinterceptor.cjs.js": "./lib/npoapiinterceptor.browser.cjs.js",
     "./lib/npoapiinterceptor.es.js": "./lib/npoapiinterceptor.browser.es.js"
   },
+  "homepage": "https://github.com/evangelischeomroep/npo-api-interceptor",
+  "bugs": "https://github.com/evangelischeomroep/npo-api-interceptor/issues",
   "repository": "git@github.com:evangelischeomroep/npo-api-interceptor.git",
   "author": "Leon de Rijke",
   "license": "MIT",
