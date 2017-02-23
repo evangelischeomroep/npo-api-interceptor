@@ -1,3 +1,4 @@
+import babel from 'rollup-plugin-babel'
 import replace from 'rollup-plugin-replace'
 
 export default config => {
@@ -11,6 +12,7 @@ export default config => {
       jssha: 'jsSHA'
     },
     plugins: [
+      babel(),
       replace({ 'process.browser': JSON.stringify(!!config.browser) })
     ]
   }
