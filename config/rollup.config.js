@@ -8,7 +8,7 @@ export default config => {
     dest: config.dest,
     external: [ 'jssha' ],
     globals: {
-      jssha: 'JsSHA'
+      jssha: 'jsSHA'
     },
     plugins: [
       replace({ 'process.browser': JSON.stringify(!!config.browser) })

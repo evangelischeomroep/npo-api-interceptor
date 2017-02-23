@@ -1,4 +1,4 @@
-import JsSHA from 'jssha'
+import jsSHA from 'jssha'
 
 /**
  * Encrypts a message with a secret, using SHA256 implementation.
@@ -10,7 +10,9 @@ import JsSHA from 'jssha'
  * @returns {String}
  */
 const encrypt = (secret, message) => {
-  const sha = new JsSHA('SHA-256', 'TEXT')
+  /* eslint-disable new-cap */
+  const sha = new jsSHA('SHA-256', 'TEXT')
+  /* eslint-enable new-cap */
 
   sha.setHMACKey(secret, 'TEXT')
   sha.update(message)
