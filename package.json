@@ -13,18 +13,23 @@
   "author": "Leon de Rijke <leonderijke@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "clean": "rimraf lib && mkdirp lib",
     "rollup-es": "rollup -c config/rollup.config.es.js && rollup -c config/rollup.config.browser.es.js",
     "rollup-cjs": "rollup -c config/rollup.config.cjs.js && rollup -c config/rollup.config.browser.cjs.js",
     "rollup-iife": "rollup -c config/rollup.config.iife.js",
     "rollup": "npm-run-all --parallel rollup-es rollup-cjs rollup-iife",
+    "build": "npm-run-all clean rollup",
     "lint": "standard"
   },
   "dependencies": {
     "jssha": "^2.2.0"
   },
   "devDependencies": {
+    "mkdirp": "^0.5.1",
     "npm-run-all": "^4.0.2",
+    "rimraf": "^2.6.0",
     "rollup": "^0.41.4",
+    "rollup-plugin-replace": "^1.1.1",
     "standard": "^9.0.0-beta.0"
   },
   "standard": {
