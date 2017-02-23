@@ -1,0 +1,29 @@
+{
+  "name": "npo-api-interceptor",
+  "version": "0.1.0",
+  "description": "Request Interceptor for use with Axios. Adds the necessary auth params. Can be used in the browser and in Node.js.",
+  "main": "lib/npoapiinterceptor.cjs.js",
+  "jsnext:main": "lib/npoapiinterceptor.es.js",
+  "module": "lib/npoapiinterceptor.es.js",
+  "browser": "lib/npoapiinterceptor.js",
+  "repository": "git@github.com:evangelischeomroep/npo-api-interceptor.git",
+  "author": "Leon de Rijke <leonderijke@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "rollup-es": "rollup -c config/rollup.config.es.js",
+    "rollup-cjs": "rollup -c config/rollup.config.cjs.js",
+    "rollup-iife": "rollup -c config/rollup.config.iife.js",
+    "rollup": "npm-run-all --parallel rollup-es rollup-cjs rollup-iife",
+    "lint": "standard"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.0.2",
+    "rollup": "^0.41.4",
+    "standard": "^9.0.0-beta.0"
+  },
+  "standard": {
+    "ignore": [
+      "lib"
+    ]
+  }
+}
