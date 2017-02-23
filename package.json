@@ -5,16 +5,22 @@
   "main": "lib/npoapiinterceptor.cjs.js",
   "jsnext:main": "lib/npoapiinterceptor.es.js",
   "module": "lib/npoapiinterceptor.es.js",
-  "browser": "lib/npoapiinterceptor.js",
+  "browser": {
+    "./lib/npoapiinterceptor.cjs.js": "./lib/npoapiinterceptor.browser.cjs.js",
+    "./lib/npoapiinterceptor.es.js": "./lib/npoapiinterceptor.browser.es.js"
+  },
   "repository": "git@github.com:evangelischeomroep/npo-api-interceptor.git",
   "author": "Leon de Rijke <leonderijke@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "rollup-es": "rollup -c config/rollup.config.es.js",
-    "rollup-cjs": "rollup -c config/rollup.config.cjs.js",
+    "rollup-es": "rollup -c config/rollup.config.es.js && rollup -c config/rollup.config.browser.es.js",
+    "rollup-cjs": "rollup -c config/rollup.config.cjs.js && rollup -c config/rollup.config.browser.cjs.js",
     "rollup-iife": "rollup -c config/rollup.config.iife.js",
     "rollup": "npm-run-all --parallel rollup-es rollup-cjs rollup-iife",
     "lint": "standard"
+  },
+  "dependencies": {
+    "jssha": "^2.2.0"
   },
   "devDependencies": {
     "npm-run-all": "^4.0.2",
