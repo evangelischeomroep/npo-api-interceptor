@@ -10,7 +10,7 @@
     "./lib/npoapiinterceptor.es.js": "./lib/npoapiinterceptor.browser.es.js"
   },
   "repository": "git@github.com:evangelischeomroep/npo-api-interceptor.git",
-  "author": "Leon de Rijke <leonderijke@gmail.com>",
+  "author": "Leon de Rijke",
   "license": "MIT",
   "scripts": {
     "clean": "rimraf lib && mkdirp lib",
