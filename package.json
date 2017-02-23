@@ -35,9 +35,6 @@
     "rollup-plugin-replace": "^1.1.1",
     "standard": "^9.0.0-beta.0"
   },
-  "files": [
-    "lib"
-  ],
   "standard": {
     "ignore": [
       "lib"
