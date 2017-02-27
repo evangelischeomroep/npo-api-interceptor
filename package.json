@@ -1,7 +1,7 @@
 {
   "name": "npo-api-interceptor",
   "version": "0.1.6",
-  "description": "Request Interceptor for use with Axios. Adds the necessary auth params. Can be used in the browser and in Node.js.",
+  "description": "Request Interceptor for using the NPO API with Axios or AngularJS $http service. Adds the necessary auth params. Can be used in the browser and in Node.js.",
   "main": "lib/npoapiinterceptor.cjs.js",
   "jsnext:main": "lib/npoapiinterceptor.es.js",
   "module": "lib/npoapiinterceptor.es.js",

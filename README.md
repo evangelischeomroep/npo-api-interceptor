@@ -1,16 +1,28 @@
 # NPO API Interceptor
 
-Request Interceptor for use with [Axios](https://www.npmjs.com/package/axios). Adds the necessary headers to access the NPO API. Can be used in the browser and in Node.js.
+Request Interceptor for using the NPO API with [Axios](https://www.npmjs.com/package/axios) and [AngularJS's $http service](https://docs.angularjs.org/api/ng/service/$http). Adds the necessary headers to access the NPO API. Can be used in the browser and in Node.js.
 
-## Usage
+## Installation
 
 Install via npm:
 
 ```bash
-npm install npo-api-interceptor
+npm install --save npo-api-interceptor
 ```
 
-Then use it:
+or Yarn:
+
+```bash
+yarn add npo-api-interceptor
+```
+
+If you don't use a module bundler like Webpack or Browserify in your project, a browser build is available at `lib/npoapiinterceptor.js`. This build makes the NPO API Interceptor available on the global `npoApiInterceptor` variable.
+
+As this depends on [jsSHA](https://github.com/Caligatio/jsSHA/), you need to include that dependency yourself.
+
+## Usage with a module bundler
+
+After installation (see above) you can `import` the interceptor and use it. The interceptor takes at least an API key and secret and returns a function (the actual interceptor) that Axios or AngularJS will call when performing requests. Example:
 
 ```js
 import axios from 'axios'
@@ -24,9 +36,29 @@ axios.interceptors.request.use(npoApiInterceptor({
 
 ## Usage without a module bundler
 
-If you don't use a module bundler like Webpack or Browserify in your project, a browser build is available at `lib/npoapiinterceptor.js`. This build makes the NPO API Interceptor available on the global `npoApiInterceptor` variable.
+After installation (see above) the interceptor is available on the global `npoApiInterceptor` variable. The interceptor takes at least an API key and secret and returns a function (the actual interceptor) that Axios or AngularJS will call when performing requests. Example:
 
-As this depends on [jsSHA](https://github.com/Caligatio/jsSHA/), you need to include that dependency yourself.
+```js
+axios.interceptors.request.use(npoApiInterceptor({
+  key: '<your-key>',
+  secret: '<your-secret>'
+}))
+```
+
+## Usage with Angular
+
+The NPO API Interceptor can be provided as an [interceptor](https://docs.angularjs.org/api/ng/service/$http#interceptors) to the `$http` service. Example using an anonymous factory:
+
+```js
+$httpProvider.interceptors.push(function() {
+  return {
+    request: npoApiInterceptor({
+      key: '<your-key>',
+      secret: '<your-secret>'
+    })
+  };
+});
+```
 
 ## Usage in Node.js
 
