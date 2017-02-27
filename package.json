@@ -2,6 +2,12 @@
   "name": "npo-api-interceptor",
   "version": "0.1.6",
   "description": "Request Interceptor for using the NPO API with Axios or AngularJS's $http service. Calculates and adds the necessary authorization headers to the request. The NPO API Interceptor can be used both in the browser and in Node.js.",
+  "keywords": [
+    "axios",
+    "angular",
+    "interceptor",
+    "request interceptor"
+  ],
   "main": "lib/npoapiinterceptor.cjs.js",
   "jsnext:main": "lib/npoapiinterceptor.es.js",
   "module": "lib/npoapiinterceptor.es.js",
