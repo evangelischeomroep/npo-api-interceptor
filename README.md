@@ -1,6 +1,6 @@
 # NPO API Interceptor
 
-Request Interceptor for using the NPO API with [Axios](https://www.npmjs.com/package/axios) and [AngularJS's $http service](https://docs.angularjs.org/api/ng/service/$http). Adds the necessary headers to access the NPO API. Can be used in the browser and in Node.js.
+Request Interceptor for using the NPO API with [Axios](https://www.npmjs.com/package/axios) or [AngularJS's $http service](https://docs.angularjs.org/api/ng/service/$http). Calculates and adds the necessary authorization headers to the request. The NPO API Interceptor can be used both in the browser and in Node.js.
 
 ## Installation
 
