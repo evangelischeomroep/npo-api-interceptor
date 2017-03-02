@@ -74,6 +74,10 @@ axios.interceptors.request.use(npoApiInterceptor({
 
 Note that this origin should be whitelisted to access the NPO API.
 
+## Browser support
+
+The NPO API Interceptor depends on two ES2015 features: Promise and Object.assign. Polyfills are not included, you need to polyfill these in your project, depending on your browser support level.
+
 ## Development
 
 If you want, you can use [nvm](https://github.com/creationix/nvm) to manage multiple Node.js versions on your machine.
