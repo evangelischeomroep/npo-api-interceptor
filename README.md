@@ -1,6 +1,6 @@
 # NPO API Interceptor
 
-Request Interceptor for using the NPO API with [Axios](https://www.npmjs.com/package/axios) or [AngularJS's $http service](https://docs.angularjs.org/api/ng/service/$http). Calculates and adds the necessary authorization headers to the request. The NPO API Interceptor can be used both in the browser and in Node.js.
+Request Interceptor for using the NPO API with [Axios](https://www.npmjs.com/package/axios), [AngularJS's $http service](https://docs.angularjs.org/api/ng/service/$http) or even [jQuery.ajax](http://api.jquery.com/jQuery.ajax/). Calculates and adds the necessary authorization headers to the request. The NPO API Interceptor can be used both in the browser and in Node.js.
 
 ## Installation
 
@@ -60,6 +60,46 @@ $httpProvider.interceptors.push(function() {
 });
 ```
 
+## Usage with jQuery.ajax
+
+Even though jQuery.ajax() doesn't have the concept op request interceptors, the NPO API Interceptor can be used to add the necessary headers to the request. But you need to be prepared to jump through a couple of hoops. Example of a Find media (`POST /media`) request:
+
+```js
+var interceptor = window.npoApiInterceptor({
+  key: '<your-key>',
+  secret: '<your-secret>'
+});
+
+// An object of the URL parameters you will use:
+var params = {
+  profile: 'eo',
+  max: '100'
+};
+
+var url = 'https://rs.poms.omroep.nl/v1/api/media/';
+
+var config = {
+  type: 'POST',
+  // Add params as query string to the URL
+  url: url + '?' + jQuery.params(params),
+  // Add params property for NPO API Interceptor, jQuery.ajax doesn't use it
+  params: params,
+  data: JSON.stringify({
+    searches: {
+      types: 'SERIES'
+    }
+  }),
+  dataType: 'json'
+};
+
+interceptor(config).then(function(config) {
+  // Wrap jQuery.ajax in a Promise to return a real Promise instead of a Promise-like jqXHR object
+  return new Promise(function(resolve, reject) {
+    jQuery.ajax(config).done(resolve).fail(reject);
+  });
+});
+```
+
 ## Usage in Node.js
 
 When using the NPO API Interceptor server-side, the required `Origin` header isn't present on API requests. Therefore, you should specify an origin in the interceptor config:
@@ -73,6 +113,10 @@ axios.interceptors.request.use(npoApiInterceptor({
 ```
 
 Note that this origin should be whitelisted to access the NPO API.
+
+## Browser support
+
+The NPO API Interceptor depends on two ES2015 features: Promise and Object.assign. Polyfills are not included, you need to polyfill these in your project, depending on your browser support level.
 
 ## Development
 
