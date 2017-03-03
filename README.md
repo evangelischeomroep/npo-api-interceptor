@@ -116,7 +116,7 @@ Note that this origin should be whitelisted to access the NPO API.
 
 ## Browser support
 
-The NPO API Interceptor depends on two ES2015 features: Promise and Object.assign. Polyfills are not included, you need to polyfill these in your project, depending on your browser support level.
+The NPO API Interceptor depends on one ES2015 feature: Promises. A polyfills is not included, you need to polyfill it in your project, depending on your browser support level.
 
 ## Development
 
