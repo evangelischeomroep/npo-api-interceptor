@@ -7,8 +7,12 @@
       }
     ]
   ],
-  "plugins": [
-    "external-helpers",
-    "transform-object-assign"
-  ]
+  "env": {
+    "build": {
+      "plugins": [
+        "external-helpers",
+        "transform-object-assign"
+      ]
+    }
+  }
 }
