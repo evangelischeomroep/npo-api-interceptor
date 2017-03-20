@@ -90,7 +90,7 @@ const createNpoApiInterceptor = ({ key, secret, origin = '' }) => {
    * @returns {Object}
    */
   function getNpoApiHeaders (config) {
-    const requestDate = new Date()
+    const requestDate = config.date || new Date()
 
     let headers = {
       'X-NPO-Date': formatDate(requestDate),
