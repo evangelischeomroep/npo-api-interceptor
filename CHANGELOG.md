@@ -1,4 +1,4 @@
-## 1.3.0 (unreleased)
+## 1.3.0 (March 28, 2017)
 
 * [#3](https://github.com/evangelischeomroep/npo-api-interceptor/pull/3) Add possibility to pass in a date (for easier testing), add tests
 
