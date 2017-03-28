@@ -1,3 +1,7 @@
+## 1.3.0 (unreleased)
+
+* [#3](https://github.com/evangelischeomroep/npo-api-interceptor/pull/3) Add possibility to pass in a date (for easier testing), add tests
+
 ## 1.2.0 (March 3, 2017)
 
 * [#2](https://github.com/evangelischeomroep/npo-api-interceptor/pull/2) Remove the need to polyfill Object.assign()
