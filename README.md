@@ -136,6 +136,5 @@ To get started:
 
 To publish a new version:
 
-1. Create a new version number: `npm version major|minor|patch`. See [SemVer](http://semver.org/).
+1. Create a new version number: `npm version major|minor|patch`. See [SemVer](http://semver.org/). This will run the `build` command and add the built files to the new version.
 2. Publish to the registry: `npm publish`. The `lint` and `build` commands will be run automatically, to make sure we're always publishing the latest source and adhere to the style guide.
-3. Push the tags to GitHub: `git push --tags`.
