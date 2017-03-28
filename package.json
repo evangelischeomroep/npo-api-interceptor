@@ -26,7 +26,7 @@
     "rollup-cjs": "rollup -c config/rollup.config.cjs.js && rollup -c config/rollup.config.browser.cjs.js",
     "rollup-iife": "rollup -c config/rollup.config.iife.js",
     "rollup": "BABEL_ENV=build npm-run-all --parallel rollup-es rollup-cjs rollup-iife",
-    "prepublish": "npm-run-all lint build",
+    "prepublish": "npm-run-all lint build test",
     "build": "npm-run-all clean rollup",
     "test": "jest",
     "lint": "standard"
