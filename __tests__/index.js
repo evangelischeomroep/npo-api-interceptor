@@ -71,7 +71,7 @@ describe('Interceptor', () => {
       date: date
     }).then(config => {
       expect(config.headers).toHaveProperty('Authorization')
-      expect(config.headers.Authorization).toEqual('NPO a:nfHqRlxjOYwle2bEtK72x5b11XJPblXlebpgbKW+pEk=')
+      expect(config.headers.Authorization).toEqual('NPO a:FB2kXgHeZj6GazXk5YoGjovJ7OZOXZTtXUZSsUNAzVQ=')
     })
   })
 
