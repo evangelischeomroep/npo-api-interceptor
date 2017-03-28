@@ -1,6 +1,6 @@
 {
   "name": "npo-api-interceptor",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Request Interceptor for using the NPO API with Axios or AngularJS's $http service. Calculates and adds the necessary authorization headers to the request. The NPO API Interceptor can be used both in the browser and in Node.js.",
   "keywords": [
     "axios",
