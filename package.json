@@ -25,9 +25,10 @@
     "rollup-es": "rollup -c config/rollup.config.es.js && rollup -c config/rollup.config.browser.es.js",
     "rollup-cjs": "rollup -c config/rollup.config.cjs.js && rollup -c config/rollup.config.browser.cjs.js",
     "rollup-iife": "rollup -c config/rollup.config.iife.js",
-    "rollup": "npm-run-all --parallel rollup-es rollup-cjs rollup-iife",
+    "rollup": "BABEL_ENV=build npm-run-all --parallel rollup-es rollup-cjs rollup-iife",
     "prepublish": "npm-run-all lint build",
     "build": "npm-run-all clean rollup",
+    "test": "jest",
     "lint": "standard"
   },
   "dependencies": {
@@ -37,6 +38,7 @@
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-object-assign": "^6.22.0",
     "babel-preset-es2015": "^6.22.0",
+    "jest": "^19.0.2",
     "mkdirp": "^0.5.1",
     "npm-run-all": "^4.0.2",
     "rimraf": "^2.6.0",
