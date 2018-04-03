@@ -10,6 +10,7 @@
   "env": {
     "build": {
       "plugins": [
+        "babel-plugin-es6-promise",
         "external-helpers",
         "transform-object-assign"
       ]
