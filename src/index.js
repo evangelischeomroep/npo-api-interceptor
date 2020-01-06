@@ -96,7 +96,6 @@ const createNpoApiInterceptor = ({ key, secret, origin = '' }) => {
       'X-NPO-Date': formatDate(requestDate),
       'Authorization': getAuthorizationHeader(config, requestDate),
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
       'Accept': 'application/json'
     }
 
