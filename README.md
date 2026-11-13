@@ -1,6 +1,15 @@
-# NPO API Interceptor
+<img src="./.github/banner.svg" alt="npo-api-interceptor" width="100%">
+
+<p align="center">Signs your requests to the NPO API, from the browser or Node.js.</p>
 
 Request Interceptor for using the NPO API with [Axios](https://www.npmjs.com/package/axios), [AngularJS's $http service](https://docs.angularjs.org/api/ng/service/$http) or even [jQuery.ajax](http://api.jquery.com/jQuery.ajax/). Calculates and adds the necessary authorization headers to the request. The NPO API Interceptor can be used both in the browser and in Node.js.
+
+## What it does
+
+- **Signs NPO API requests.** With your API key and secret it adds the `Authorization` and `X-NPO-Date` headers the NPO API expects.
+- **Leaves other requests alone.** Only requests to the production and test NPO API are signed; everything else passes through unchanged.
+- **Works with your HTTP client.** Plug it into Axios or AngularJS as a request interceptor, or call it yourself before `jQuery.ajax`.
+- **Runs on the server too.** In Node.js you pass the origin that the NPO API has whitelisted for you.
 
 ## Installation
 
@@ -118,23 +127,6 @@ Note that this origin should be whitelisted to access the NPO API.
 
 The NPO API Interceptor depends on one ES2015 feature: Promises. A polyfills is not included, you need to polyfill it in your project, depending on your browser support level.
 
-## Development
+## Contributing
 
-If you want, you can use [nvm](https://github.com/creationix/nvm) to manage multiple Node.js versions on your machine.
-
-We use [JavaScript Standard Style](http://standardjs.com/) to format the code. Numerous [text editor plugins](http://standardjs.com/index.html#text-editor-plugins) are available, so you can set up your editor to format the JS code for you.
-
-We use [Babel](http://babeljs.io/) and [Rollup](http://rollupjs.org/) to transpile and bundle the code. The source code is in `src/` and multiple target bundles are built in `lib/`.
-
-We use [Yarn](http://yarnpkg.com/), but [npm](http://npmjs.com/) can also be used. For publishing to the Yarn and npm registries, we currently use npm, because Yarn publish resulted in invalid tar files.
-
-To get started:
-
-1. Clone the repository.
-2. Run nvm to switch to the right Node.js version: `nvm use`.
-3. Install the dependencies: `yarn install`.
-
-To publish a new version:
-
-1. Create a new version number: `npm version major|minor|patch`. See [SemVer](http://semver.org/). This will run the `build` command and add the built files to the new version.
-2. Publish to the registry: `npm publish`. The `lint` and `build` commands will be run automatically, to make sure we're always publishing the latest source and adhere to the style guide.
+Working on this repo? [AGENTS.md](./AGENTS.md) has the setup, conventions and checks.
